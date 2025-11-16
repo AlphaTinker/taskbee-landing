@@ -1,2 +1,2 @@
 # taskbee-landing
-TaskBee — A minimal, modern landing page for a campus-based micro-task marketplace. Built for marketing, pitch evaluation, and pilot launch.
+TaskBee is a campus-first micro-task marketplace where students earn money completing small tasks posted by peers. This repository contains the official TaskBee landing page, including the hero branding, value proposition, features, how-it-works flow, and responsive UI built with pure HTML/CSS. Optimized for GitHub Pages deployment, pitch evaluations, and early-stage startup visibility.
