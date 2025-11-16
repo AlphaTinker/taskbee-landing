@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>TaskBee — Get tasks done. Students earn.</title>
+  <meta name="description" content="TaskBee — A campus micro-task marketplace where students complete small tasks and earn money instantly." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/taskbee-favicon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="TaskBee — Student Micro-task Marketplace" />
+  <meta property="og:description" content="Post tasks. Match instantly with verified students. Get quick help on campus." />
+  <meta property="og:image" content="assets/taskbee-og.png" />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy:#07182e;
+      --gold:#FCCD3C;
+      --muted:#9CA9BA;
+      --white:#FFF;
+      --card:#0f213b;
+      --radius:12px;
+      --maxw:1120px;
+      --space-lg:48px;
+      --space-md:32px;
+      --space-sm:20px;
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{
+      font-family:Inter, system-ui, sans-serif;
+      background:var(--navy);
+      color:var(--white);
+    }
+
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:24px;}
+
+    /* HEADER */
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding-bottom:var(--space-md);
+    }
+    .brand{
+      display:flex;align-items:center;gap:12px;
+      color:white;text-decoration:none;
+    }
+    .brand img{height:50px;width:50px;}
+
+    nav{display:flex;gap:24px;}
+    nav a{text-decoration:none;color:white;font-weight:600;}
+
+    .cta{
+      padding:12px 18px;
+      background:var(--gold);
+      color:var(--navy);
+      border-radius:var(--radius);
+      font-weight:700;
+      text-decoration:none;
+    }
+
+    /* HERO */
+    .hero{
+      display:grid;
+      grid-template-columns:1fr 360px;
+      gap:40px;
+      align-items:center;
+      margin-bottom:var(--space-lg);
+    }
+
+    .hero-card{
+      background:#0c1f38;
+      padding:var(--space-md);
+      border-radius:var(--radius);
+      box-shadow:0 12px 32px rgba(0,0,0,0.4);
+    }
+
+    .eyebrow{
+      display:inline-block;
+      font-size:13px;
+      font-weight:700;
+      background:rgba(254,207,68,0.15);
+      color:var(--gold);
+      padding:6px 14px;
+      border-radius:20px;
+      margin-bottom:var(--space-sm);
+    }
+
+    h1{
+      font-size:36px;
+      line-height:1.25;
+      margin-top:4px;
+      margin-bottom:var(--space-sm);
+    }
+    .lead{
+      color:var(--muted);
+      font-size:16px;
+      margin-bottom:var(--space-md);
+    }
+
+    .hero-actions{
+      display:flex;gap:16px;
+    }
+
+    .btn-primary{
+      background:var(--gold);
+      color:var(--navy);
+      padding:12px 20px;
+      border-radius:var(--radius);
+      font-weight:700;
+      text-decoration:none;
+    }
+    .btn-outline{
+      padding:12px 20px;
+      border-radius:var(--radius);
+      border:2px solid rgba(255,255,255,0.15);
+      color:white;
+      font-weight:600;
+      text-decoration:none;
+    }
+
+    /* RIGHT MOCKUP */
+    .mock{
+      background:#0c253f;
+      padding:var(--space-md);
+      border-radius:var(--radius);
+      text-align:center;
+      box-shadow:0 12px 32px rgba(0,0,0,0.35);
+      margin-top:18px; /* perfect alignment */
+    }
+
+    .mock img{
+      width:200px;
+    }
+
+    /* PREMIUM TAGLINE (OPTION B) */
+    .tagline{
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      margin-top:16px;
+    }
+    .tagline span{
+      background:rgba(255,255,255,0.06);
+      padding:6px 12px;
+      border-radius:20px;
+      font-size:12px;
+      color:var(--muted);
+      white-space:nowrap;
+    }
+
+    /* WHY SECTION */
+    h2{
+      text-align:center;
+      color:var(--gold);
+      margin-bottom:var(--space-md);
+      font-size:28px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:var(--space-md);
+      margin-bottom:var(--space-lg);
+    }
+
+    .card{
+      background:var(--card);
+      padding:var(--space-sm);
+      border-radius:var(--radius);
+      box-shadow:0 10px 28px rgba(0,0,0,0.3);
+    }
+
+    .card h3{
+      color:var(--gold);
+      margin-bottom:8px;
+      font-size:18px;
+      font-weight:700;
+    }
+
+    .card p{
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    /* STATS */
+    .stats{
+      display:flex;
+      justify-content:center;
+      gap:var(--space-md);
+      margin-bottom:var(--space-lg);
+    }
+
+    .stat{
+      background:#0B2A42;
+      padding:var(--space-sm);
+      width:160px;
+      border-radius:var(--radius);
+      text-align:center;
+    }
+
+    .stat h4{
+      color:var(--gold);
+      font-size:22px;
+      font-weight:700;
+    }
+
+    .stat p{
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    /* HOW IT WORKS */
+    .steps{
+      max-width:760px;
+      margin:0 auto var(--space-lg);
+      display:flex;
+      flex-direction:column;
+      gap:var(--space-sm);
+    }
+    .step{
+      display:flex;
+      gap:var(--space-sm);
+      background:#0B2A42;
+      padding:var(--space-sm);
+      border-radius:var(--radius);
+    }
+
+    .num{
+      width:44px;height:44px;
+      border-radius:var(--radius);
+      background:var(--gold);
+      color:var(--navy);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:800;
+      font-size:18px;
+    }
+
+    /* FOOTER */
+    footer{
+      text-align:center;
+      padding:var(--space-lg) 0 var(--space-md);
+      color:var(--muted);
+      font-size:14px;
+      border-top:1px solid rgba(255,255,255,0.06);
+    }
+
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      .mock{order:-1;margin-bottom:var(--space-lg);}
+      .grid{grid-template-columns:1fr 1fr;}
+    }
+    @media(max-width:600px){
+      nav{display:none;}
+      .grid{grid-template-columns:1fr;}
+    }
+
+  </style>
+</head>
+
+<body>
+<div class="wrap">
+
+  <!-- HEADER -->
+  <header>
+    <a class="brand" href="#">
+      <img src="assets/taskbee-logo.png" alt="TaskBee logo">
+      <div>
+        <div style="font-weight:700;font-size:20px;">TaskBee</div>
+        <div style="font-size:12px;color:var(--muted);">Get tasks done. Students earn.</div>
+      </div>
+    </a>
+
+    <nav>
+      <a href="#how">How it works</a>
+      <a href="#features">Why TaskBee</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a class="cta" href="#post">Post a Task</a>
+  </header>
+
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <div class="hero-card">
+      <span class="eyebrow">Campus-first • Micro-tasks</span>
+
+      <h1>Get small tasks done — fast.<br>Students earn money doing them.</h1>
+
+      <p class="lead">
+        Post poster work, note prep, PPT polishing, edits, or small campus errands and get help quickly from verified students.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn-primary" href="#post">Post a Task</a>
+        <a class="btn-outline" href="#how">How it works</a>
+      </div>
+    </div>
+
+    <div class="mock">
+      <img src="assets/taskbee-logo.png" alt="TaskBee logo dark">
+      <div class="tagline">
+        <span>Simple tasks</span>
+        <span>Quick matching</span>
+        <span>Campus only</span>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- WHY -->
+  <section id="features">
+    <h2>Why TaskBee?</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Verified Students</h3>
+        <p>Only campus-verified profiles for trust and safety.</p>
+      </div>
+
+      <div class="card">
+        <h3>Escrow Payments</h3>
+        <p>Payment released only after work is approved.</p>
+      </div>
+
+      <div class="card">
+        <h3>Micro-task Economy</h3>
+        <p>Students earn pocket money instantly on demand.</p>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><h4>100+</h4><p>Tasks completed</p></div>
+      <div class="stat"><h4>75%</h4><p>Repeat users</p></div>
+      <div class="stat"><h4>₹20–₹100</h4><p>Typical budgets</p></div>
+    </div>
+  </section>
+
+
+  <!-- STEPS -->
+  <section id="how">
+    <h2>How It Works</h2>
+
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <div><strong>Post a Task</strong><br><span style="color:var(--muted);">Describe your work + add a micro-budget.</span></div>
+      </div>
+
+      <div class="step">
+        <div class="num">2</div>
+        <div><strong>Match Instantly</strong><br><span style="color:var(--muted);">Verified students accept within minutes.</span></div>
+      </div>
+
+      <div class="step">
+        <div class="num">3</div>
+        <div><strong>Approve → Pay</strong><br><span style="color:var(--muted);">You approve the work. Doer gets paid.</span></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer id="contact">
+    © TaskBee — Student Micro-task Marketplace  
+    <br>
+    <a href="mailto:hello@taskbee.example" style="color:var(--gold);text-decoration:none;">hello@taskbee.example</a>
+  </footer>
+
+</div>
+</body>
+</html>
